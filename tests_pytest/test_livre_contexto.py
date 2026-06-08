@@ -64,21 +64,21 @@ def test_transicoes_cruzadas_ausentes():
 # ---------------------------------------------------------------------------
 
 def test_caso_critico_cruzado():
-    """([)] deve ser rejeitada — pareamento cruzado."""
+    """([)] deve ser rejeitada - pareamento cruzado."""
     pda = build_balanceado_pda()
     aceito, _ = pda.aceita("([)]")
     assert not aceito, "([)] foi aceita incorretamente\n" + "\n".join(pda.trace)
 
 
 def test_caso_critico_concatenacao():
-    """()() deve ser aceita — concatenação no topo é válida."""
+    """()() deve ser aceita - concatenação no topo é válida."""
     pda = build_balanceado_pda()
     aceito, _ = pda.aceita("()()")
     assert aceito, "()() foi rejeitada incorretamente\n" + "\n".join(pda.trace)
 
 
 def test_caso_critico_abridores_sem_fechamento():
-    """((( deve ser rejeitada — abridores sem fechador."""
+    """((( deve ser rejeitada - abridores sem fechador."""
     pda = build_balanceado_pda()
     aceito, _ = pda.aceita("(((")
     assert not aceito, "((( foi aceita incorretamente\n" + "\n".join(pda.trace)

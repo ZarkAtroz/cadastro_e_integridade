@@ -1,5 +1,5 @@
 """
-Reconhecedor R — L = {w#w | w ∈ {0,1}*}
+Reconhecedor R - L = {w#w | w ∈ {0,1}*}
 Hierarquia de Chomsky: Linguagem Recursiva → Máquina de Turing
 
 Algoritmo: marcação por correspondência par-a-par.
@@ -151,7 +151,7 @@ _TRANSITIONS: dict[str, dict[str, tuple[str, str, str]]] = {
 
 def build_ww_mt() -> MT:
     """
-    Reconhece L = {w#w | w em {0,1}*} (R — Linguagem Recursiva).
+    Reconhece L = {w#w | w em {0,1}*} (R - Linguagem Recursiva).
 
     Constrói a MT de fita unica com 12 estados operacionais.
     """

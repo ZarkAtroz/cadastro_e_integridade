@@ -1,6 +1,6 @@
 digraph DFA_CPF {
     rankdir=LR;
-    label="DFA — CPF (ddd.ddd.ddd-dd)\nToda transição não-exibida vai para q_trap";
+    label="DFA - CPF (ddd.ddd.ddd-dd)\nToda transição não-exibida vai para q_trap";
     labelloc=b;
     fontsize=14;
     node [shape=circle, fontsize=11];
@@ -11,7 +11,7 @@ digraph DFA_CPF {
     q14 [shape=doublecircle];
     q_trap [label="q_trap", style=filled, fillcolor=lightgrey, shape=circle];
 
-    // Fluxo principal — caminho feliz
+    // Fluxo principal - caminho feliz
     q0  -> q1  [label="0-9"];
     q1  -> q2  [label="0-9"];
     q2  -> q3  [label="0-9"];

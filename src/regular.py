@@ -1,5 +1,5 @@
 """
-Reconhecedor LR — CPF no formato ddd.ddd.ddd-dd
+Reconhecedor LR - CPF no formato ddd.ddd.ddd-dd
 Hierarquia de Chomsky: Linguagem Regular → DFA
 
 Uso:
@@ -32,7 +32,7 @@ TRAP = 'q_trap'
 
 def build_cpf_dfa() -> DFA:
     """
-    Reconhece CPF no formato textual ddd.ddd.ddd-dd (LR — Linguagem Regular).
+    Reconhece CPF no formato textual ddd.ddd.ddd-dd (LR - Linguagem Regular).
 
     Constrói o DFA programaticamente a partir de PADRAO.
 

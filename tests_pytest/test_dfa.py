@@ -1,5 +1,5 @@
 """
-Smoke test DFA: reconhece (ab)* — cadeia de comprimento par formada por 'a' seguido de 'b'.
+Smoke test DFA: reconhece (ab)* - cadeia de comprimento par formada por 'a' seguido de 'b'.
 Aceita: "", "ab", "abab"
 Rejeita: "a", "ba", "aba", "b"
 """

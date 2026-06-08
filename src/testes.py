@@ -1,5 +1,5 @@
 """
-Bateria unificada de testes — Projeto Linguagens Formais.
+Bateria unificada de testes - Projeto Linguagens Formais.
 Roda os três reconhecedores contra seus arquivos .txt e imprime tabela + traces.
 
 Uso:
@@ -159,9 +159,11 @@ def rodar_bateria(
             _valida_cadeia(cadeia_trace, "trace")
             rec = factory()
             obtido, passos = rec.aceita(cadeia_trace)
-            print(f"  Trace — cadeia {label}: {repr(cadeia_trace)}")
+            print(f"  Trace - cadeia {label}: {repr(cadeia_trace)}")
             print(f"  {SEP2}")
             for linha in rec.trace:
+                if not _UTF8:
+                    linha = linha.replace('ε', 'eps').replace('∈', 'in').replace(chr(8212), '-')
                 print(f"    {linha}")
             print()
 
@@ -170,7 +172,7 @@ def rodar_bateria(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Bateria unificada — três reconhecedores (LR, LLC, R)"
+        description="Bateria unificada - três reconhecedores (LR, LLC, R)"
     )
     parser.add_argument(
         "--quiet", action="store_true",

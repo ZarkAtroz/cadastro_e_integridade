@@ -1,6 +1,6 @@
 digraph MT_ww {
     rankdir=LR;
-    label="MT — L = {w#w | w ∈ {0,1}*}\nRótulo: lido / escrito, mov";
+    label="MT - L = {w#w | w ∈ {0,1}*}\nRótulo: lido / escrito, mov";
     fontsize=13;
     node [shape=circle, fontsize=10];
 

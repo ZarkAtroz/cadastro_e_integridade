@@ -1,5 +1,5 @@
 """
-Bonus 1 — Comparacao DFA x re para CPF.
+Bonus 1 - Comparacao DFA x re para CPF.
 
 O reconhecedor principal LR continua sendo o DFA manual (regular.py).
 Este arquivo demonstra que ambos reconhecem a mesma linguagem regular,
@@ -20,7 +20,7 @@ from automato import load_test_cases
 from regular import build_cpf_dfa
 
 # ---------------------------------------------------------------------------
-# Reconhecedor via re (comparacao apenas — NAO e o reconhecedor principal)
+# Reconhecedor via re (comparacao apenas - NAO e o reconhecedor principal)
 # ---------------------------------------------------------------------------
 
 _PADRAO_RE = re.compile(r'\d{3}\.\d{3}\.\d{3}-\d{2}')
@@ -77,7 +77,7 @@ def comparar() -> int:
     if divergencias == 0:
         print("  Mesma linguagem regular, dois formalismos distintos.")
     else:
-        print(f"  ATENCAO: {divergencias} divergencia(s) detectada(s) — revisar DFA ou padrao re.")
+        print(f"  ATENCAO: {divergencias} divergencia(s) detectada(s) - revisar DFA ou padrao re.")
 
     return divergencias
 

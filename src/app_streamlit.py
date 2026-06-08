@@ -1,5 +1,5 @@
 """
-Bonus 2 — Interface Streamlit para os tres reconhecedores.
+Bonus 2 - Interface Streamlit para os tres reconhecedores.
 
 Uso:
     streamlit run src/app_streamlit.py
@@ -99,9 +99,9 @@ def render_aba(
         aceito, passos = rec.aceita(cadeia)
 
         if aceito:
-            st.success(f"aceita — {passos} passos")
+            st.success(f"aceita - {passos} passos")
         else:
-            st.error(f"rejeita — {passos} passos")
+            st.error(f"rejeita - {passos} passos")
 
         if mostrar_trace:
             st.code("\n".join(rec.trace), language="")
@@ -112,7 +112,7 @@ def render_aba(
 # ---------------------------------------------------------------------------
 
 st.set_page_config(
-    page_title="Reconhecedores — Linguagens Formais",
+    page_title="Reconhecedores - Linguagens Formais",
     page_icon="A",
     layout="centered",
 )
@@ -124,13 +124,13 @@ st.markdown(
     "DFA (CPF), PDA (parenteses balanceados) e Maquina de Turing (w\\#w)."
 )
 
-tabs = st.tabs(["LR — CPF", "LLC — Parenteses", "R — w#w"])
+tabs = st.tabs(["LR - CPF", "LLC - Parenteses", "R - w#w"])
 
 with tabs[0]:
     render_aba(
         aba_id="lr",
         descricao=(
-            "**DFA** — Valida o formato textual do CPF: `ddd.ddd.ddd-dd`.  \n"
+            "**DFA** - Valida o formato textual do CPF: `ddd.ddd.ddd-dd`.  \n"
             "Nao verifica os digitos verificadores (isso tornaria o problema nao-regular)."
         ),
         placeholder="123.456.789-00",
@@ -143,7 +143,7 @@ with tabs[1]:
     render_aba(
         aba_id="llc",
         descricao=(
-            "**PDA** — Verifica se os delimitadores `()`, `[]`, `{}` estao "
+            "**PDA** - Verifica se os delimitadores `()`, `[]`, `{}` estao "
             "balanceados e corretamente pareados.  \n"
             "Aceita letras, digitos e operadores no meio. Cadeia vazia e aceita."
         ),
@@ -157,7 +157,7 @@ with tabs[2]:
     render_aba(
         aba_id="r",
         descricao=(
-            "**Maquina de Turing** — Reconhece `L = {w#w | w ∈ {0,1}*}`.  \n"
+            "**Maquina de Turing** - Reconhece `L = {w#w | w ∈ {0,1}*}`.  \n"
             "A cadeia deve ser `w` seguida de `#` e a mesma sequencia `w`.  \n"
             "Caso especial: `#` (w = vazio) e aceito."
         ),
@@ -170,5 +170,5 @@ with tabs[2]:
 st.markdown("---")
 st.markdown(
     "Repositório GitHub: [cadastro_e_integridade](https://github.com/ZarkAtroz/cadastro_e_integridade) "
-    "&nbsp;|&nbsp; Projeto Final — Linguagens Formais"
+    "&nbsp;|&nbsp; Projeto Final - Linguagens Formais"
 )

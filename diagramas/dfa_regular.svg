@@ -9,7 +9,7 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 182.57)">
 <title>DFA_CPF</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-182.57 1375.47,-182.57 1375.47,4 -4,4"/>
-<text xml:space="preserve" text-anchor="middle" x="685.73" y="-23.7" font-family="Times New Roman,serif" font-size="14.00">DFA — CPF (ddd.ddd.ddd&#45;dd)</text>
+<text xml:space="preserve" text-anchor="middle" x="685.73" y="-23.7" font-family="Times New Roman,serif" font-size="14.00">DFA &#45; CPF (ddd.ddd.ddd&#45;dd)</text>
 <text xml:space="preserve" text-anchor="middle" x="685.73" y="-7.2" font-family="Times New Roman,serif" font-size="14.00">Toda transição não&#45;exibida vai para q_trap</text>
 <!-- __start -->
 <g id="node1" class="node">

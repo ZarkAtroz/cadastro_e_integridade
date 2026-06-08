@@ -9,7 +9,7 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 213)">
 <title>PDA_Balanceado</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-213 306.5,-213 306.5,4 -4,4"/>
-<text xml:space="preserve" text-anchor="middle" x="151.25" y="-21.65" font-family="Times New Roman,serif" font-size="13.00">PDA — Delimitadores Balanceados</text>
+<text xml:space="preserve" text-anchor="middle" x="151.25" y="-21.65" font-family="Times New Roman,serif" font-size="13.00">PDA &#45; Delimitadores Balanceados</text>
 <text xml:space="preserve" text-anchor="middle" x="151.25" y="-6.65" font-family="Times New Roman,serif" font-size="13.00">pilha: topo à direita | push_string: 1º char = novo topo</text>
 <!-- __start -->
 <g id="node1" class="node">

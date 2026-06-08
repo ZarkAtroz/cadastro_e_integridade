@@ -1,5 +1,5 @@
 """
-Bonus 3 — Grafico de crescimento de passos por tamanho da entrada.
+Bonus 3 - Grafico de crescimento de passos por tamanho da entrada.
 
 Gera 3 subplots (DFA, PDA, MT) com dados medidos e curvas teoricas.
 Salva em relatorio/grafico_passos.png (300 DPI).
@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")           # backend sem GUI — funciona em qualquer ambiente
+matplotlib.use("Agg")           # backend sem GUI - funciona em qualquer ambiente
 import matplotlib.pyplot as plt
 
 from regular import build_cpf_dfa
@@ -117,7 +117,7 @@ def main() -> None:
     teorico_dfa = [n for n in ns_dfa]
     ax.plot(ns_dfa, passos_dfa,  'o-',  label="medido",   color="steelblue")
     ax.plot(ns_dfa, teorico_dfa, '--',  label="teorico O(n)", color="tomato")
-    ax.set_title("DFA — CPF (cadeias invalidas)  |  complexidade: O(n)")
+    ax.set_title("DFA - CPF (cadeias invalidas)  |  complexidade: O(n)")
     ax.set_xlabel("Tamanho da entrada (n)")
     ax.set_ylabel("Passos")
     ax.legend()
@@ -129,7 +129,7 @@ def main() -> None:
     teorico_pda  = [p + 1 for p in tamanhos_pda]  # 2N passos + 1 epsilon
     ax.plot(tamanhos_pda, passos_pda,  'o-',  label="medido",       color="steelblue")
     ax.plot(tamanhos_pda, teorico_pda, '--',  label="teorico O(n)", color="tomato")
-    ax.set_title("PDA — Parenteses balanceados  |  complexidade: O(n)")
+    ax.set_title("PDA - Parenteses balanceados  |  complexidade: O(n)")
     ax.set_xlabel("Tamanho da entrada (n = 2N)")
     ax.set_ylabel("Passos")
     ax.legend()
@@ -141,7 +141,7 @@ def main() -> None:
     teorico_mt  = [a_mt * n**2 for n in ns_mt]
     ax.plot(ns_mt, passos_mt,  'o-',  label="medido",          color="steelblue")
     ax.plot(ns_mt, teorico_mt, '--',  label=f"teorico {a_mt:.2f}*N^2", color="tomato")
-    ax.set_title("MT — w#w  |  complexidade: O(n^2)")
+    ax.set_title("MT - w#w  |  complexidade: O(n^2)")
     ax.set_xlabel("Tamanho de w (N, cadeia = 2N+1)")
     ax.set_ylabel("Passos")
     ax.legend()

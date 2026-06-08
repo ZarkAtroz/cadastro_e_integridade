@@ -1,5 +1,5 @@
 """
-Reconhecedor LLC — parênteses, colchetes e chaves balanceados
+Reconhecedor LLC - parênteses, colchetes e chaves balanceados
 Hierarquia de Chomsky: Linguagem Livre de Contexto → PDA
 
 GLC equivalente:
@@ -44,7 +44,7 @@ TOPOS: list[str] = list(ABRIDORES.keys()) + ['$']
 
 def build_balanceado_pda() -> PDA:
     """
-    Reconhece expressoes com (), [], {} balanceados e aninhados (LLC — Livre de Contexto).
+    Reconhece expressoes com (), [], {} balanceados e aninhados (LLC - Livre de Contexto).
 
     Constrói o PDA para delimitadores balanceados.
 

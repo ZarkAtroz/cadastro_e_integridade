@@ -65,7 +65,7 @@ def test_contagem_passos_cpf_valido():
 
 
 def test_simbolo_fora_alfabeto_nao_levanta_excecao():
-    """Símbolo fora de Σ não pode levantar exceção — vai pro trap."""
+    """Símbolo fora de Σ não pode levantar exceção - vai pro trap."""
     dfa = build_cpf_dfa()
     try:
         aceito, passos = dfa.aceita("abc!@#")

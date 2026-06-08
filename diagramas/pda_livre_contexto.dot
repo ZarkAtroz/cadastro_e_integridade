@@ -1,6 +1,6 @@
 digraph PDA_Balanceado {
     rankdir=LR;
-    label="PDA — Delimitadores Balanceados\npilha: topo à direita | push_string: 1º char = novo topo";
+    label="PDA - Delimitadores Balanceados\npilha: topo à direita | push_string: 1º char = novo topo";
     labelloc=b;
     fontsize=13;
     node [shape=circle, fontsize=11];
@@ -10,13 +10,13 @@ digraph PDA_Balanceado {
 
     __start -> q;
 
-    // Auto-loop superior — push de abridores
+    // Auto-loop superior - push de abridores
     q -> q [label="(, X / (X\n[, X / [X\n{, X / {X", headport="n", tailport="n"];
 
-    // Auto-loop inferior — pop de fechadores
+    // Auto-loop inferior - pop de fechadores
     q -> q [label="), ( / ε\n], [ / ε\n}, { / ε", headport="s", tailport="s"];
 
-    // Auto-loop esquerdo — neutros (sem alterar pilha)
+    // Auto-loop esquerdo - neutros (sem alterar pilha)
     q -> q [label="σ ∈ NEUTROS\nX / X", headport="w", tailport="w"];
 
     // ε-transição de aceitação

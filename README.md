@@ -1,4 +1,4 @@
-# Projeto Final — Linguagens Formais
+# Projeto Final - Linguagens Formais
 
 Três reconhecedores implementando a hierarquia de Chomsky **LR ⊊ LLC ⊊ R**,
 cada um como simulador explícito de autômato com tabela de transição declarativa.
@@ -39,17 +39,17 @@ Cada reconhecedor aceita uma cadeia como argumento e imprime `aceita|rejeita (N 
 A flag `--trace` imprime o passo a passo do autômato.
 
 ```bash
-# DFA — CPF
+# DFA - CPF
 python src/regular.py "123.456.789-00"
 python src/regular.py "12.345.678-90"
 python src/regular.py "123.456.789-00" --trace
 
-# PDA — parênteses
+# PDA - parênteses
 python src/livre_contexto.py "({a+b})"
 python src/livre_contexto.py "((a+b)"
 python src/livre_contexto.py "({a+b})" --trace
 
-# MT — w#w
+# MT - w#w
 python src/recursiva.py "101#101"
 python src/recursiva.py "0#1"
 python src/recursiva.py "101#101" --trace
@@ -145,7 +145,7 @@ projeto/
 
 ## Bônus
 
-### Bônus 1 — Comparação DFA × `re`
+### Bônus 1 - Comparação DFA × `re`
 
 Demonstra que o DFA manual e o `re.fullmatch` reconhecem a mesma linguagem regular,
 concordando em 100% dos casos de teste.
@@ -154,7 +154,7 @@ concordando em 100% dos casos de teste.
 python src/bonus_dfa_vs_re.py
 ```
 
-### Bônus 2 — Interface Streamlit
+### Bônus 2 - Interface Streamlit
 
 Interface web com 3 abas (uma por linguagem), exemplos clicáveis, resultado destacado
 e trace completo opcional.
@@ -165,7 +165,7 @@ streamlit run src/app_streamlit.py
 
 Acesse `http://localhost:8501` após iniciar.
 
-### Bônus 3 — Gráfico de crescimento de passos
+### Bônus 3 - Gráfico de crescimento de passos
 
 Gera `relatorio/grafico_passos.png` com os 3 subplots (DFA, PDA, MT) mostrando
 crescimento medido vs curva teórica. Imprime os valores numéricos no stdout.
@@ -187,7 +187,7 @@ MT O(n²) com a=2.00.
 - **MT com 12 estados (não 11):** o estado `q_return` foi dividido em `q_return`
   (lado direito do `#`, passa por X/Y marcados) e `q_return_l` (lado esquerdo,
   passa por 0/1 não marcados). Necessário para distinguir o lado da fita durante
-  o retorno — um estado único parava no primeiro marcador encontrado, que podia
+  o retorno - um estado único parava no primeiro marcador encontrado, que podia
   ser do lado errado.
 
 - **DFA do CPF valida apenas o formato textual** (`ddd.ddd.ddd-dd`), sem verificar
