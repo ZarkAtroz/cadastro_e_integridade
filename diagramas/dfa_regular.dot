@@ -1,0 +1,32 @@
+digraph DFA_CPF {
+    rankdir=LR;
+    label="DFA — CPF (ddd.ddd.ddd-dd)\nToda transição não-exibida vai para q_trap";
+    labelloc=b;
+    fontsize=14;
+    node [shape=circle, fontsize=11];
+
+    __start [shape=point, width=0.2];
+    __start -> q0;
+
+    q14 [shape=doublecircle];
+    q_trap [label="q_trap", style=filled, fillcolor=lightgrey, shape=circle];
+
+    // Fluxo principal — caminho feliz
+    q0  -> q1  [label="0-9"];
+    q1  -> q2  [label="0-9"];
+    q2  -> q3  [label="0-9"];
+    q3  -> q4  [label="."];
+    q4  -> q5  [label="0-9"];
+    q5  -> q6  [label="0-9"];
+    q6  -> q7  [label="0-9"];
+    q7  -> q8  [label="."];
+    q8  -> q9  [label="0-9"];
+    q9  -> q10 [label="0-9"];
+    q10 -> q11 [label="0-9"];
+    q11 -> q12 [label="-"];
+    q12 -> q13 [label="0-9"];
+    q13 -> q14 [label="0-9"];
+
+    // Trap absorve tudo (única aresta visível do trap)
+    q_trap -> q_trap [label="Σ", style=dashed, color=grey];
+}

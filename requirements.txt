@@ -1,0 +1,15 @@
+# Diagramas: o pacote Python abaixo e apenas um binding.
+# Para renderizar .dot em .svg e necessario o binario do sistema:
+#   Ubuntu/Debian: apt install graphviz
+#   macOS:         brew install graphviz
+#   Windows:       winget install graphviz
+graphviz>=0.20,<1.0
+
+# Testes
+pytest>=8.0,<10.0
+
+# Graficos (relatorio / bonus)
+matplotlib>=3.9,<4.0
+
+# Interface web (bonus)
+streamlit>=1.35,<2.0

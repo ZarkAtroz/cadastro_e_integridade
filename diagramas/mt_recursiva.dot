@@ -1,0 +1,53 @@
+digraph MT_ww {
+    rankdir=LR;
+    label="MT — L = {w#w | w ∈ {0,1}*}\nRótulo: lido / escrito, mov";
+    fontsize=13;
+    node [shape=circle, fontsize=10];
+
+    // Estados de aceitação/rejeição (double circle)
+    q_accept [shape=doublecircle, label="q_accept"];
+    q_reject [shape=doublecircle, label="q_reject",
+              style=filled, fillcolor=lightgrey];
+
+    // Fluxo principal
+    q_start -> q_seek_hash_a_0 [label="0 / X, R"];
+    q_start -> q_seek_hash_a_1 [label="1 / Y, R"];
+    q_start -> q_verify_right_blank [label="# / #, R"];
+    q_start -> q_reject [label="_, X, Y / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_seek_hash_a_0 -> q_seek_hash_a_0 [label="0,1 / σ, R"];
+    q_seek_hash_a_0 -> q_find_0_right  [label="# / #, R"];
+    q_seek_hash_a_0 -> q_reject [label="X,Y,_ / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_seek_hash_a_1 -> q_seek_hash_a_1 [label="0,1 / σ, R"];
+    q_seek_hash_a_1 -> q_find_1_right  [label="# / #, R"];
+    q_seek_hash_a_1 -> q_reject [label="X,Y,_ / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_find_0_right -> q_find_0_right [label="X,Y / σ, R"];
+    q_find_0_right -> q_return       [label="0 / X, L"];
+    q_find_0_right -> q_reject [label="1,_,# / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_find_1_right -> q_find_1_right [label="X,Y / σ, R"];
+    q_find_1_right -> q_return       [label="1 / Y, L"];
+    q_find_1_right -> q_reject [label="0,_,# / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_return -> q_return   [label="X,Y / σ, L"];
+    q_return -> q_return_l [label="# / #, L"];
+    q_return -> q_reject   [label="0,1,_ / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_return_l -> q_return_l  [label="0,1 / σ, L"];
+    q_return_l -> q_next_round [label="X,Y,_ / σ, R"];
+    q_return_l -> q_reject     [label="# / #, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_next_round -> q_seek_hash_a_0 [label="0 / X, R"];
+    q_next_round -> q_seek_hash_a_1 [label="1 / Y, R"];
+    q_next_round -> q_verify_right_all_marked [label="# / #, R"];
+    q_next_round -> q_reject [label="X,Y,_ / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_verify_right_blank -> q_accept [label="_ / _, S"];
+    q_verify_right_blank -> q_reject [label="0,1,#,X,Y / σ, S", style=dashed, color=lightgrey, constraint=false];
+
+    q_verify_right_all_marked -> q_verify_right_all_marked [label="X,Y / σ, R"];
+    q_verify_right_all_marked -> q_accept [label="_ / _, S"];
+    q_verify_right_all_marked -> q_reject [label="0,1,# / σ, S", style=dashed, color=lightgrey, constraint=false];
+}

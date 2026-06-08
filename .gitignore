@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ferramentas
+.mypy_cache/
+.ruff_cache/
+
+# Claude
+.claude/
+claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Intermediarios da geracao de PDF (ficheiro typst gerado por pandoc)
+relatorio/*.typ
+
+# SVGs com hash gerados pelo typst como copias temporarias dos diagramas
+relatorio/*.svg
+
+# Roteiro interno do video (nao e entregavel oficial)
+relatorio/roteiro_video.md
+
+# Diagramas: .dot versionado; .svg gerado por 'dot -Tsvg' e tambem versionado
+# (avaliador precisa abrir o relatorio sem precisar instalar graphviz)
