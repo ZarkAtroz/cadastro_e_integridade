@@ -22,9 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from automato import PDA
 
-# ---------------------------------------------------------------------------
 # Alfabeto e conjuntos auxiliares
-# ---------------------------------------------------------------------------
 
 ABRIDORES: dict[str, str] = {'(': ')', '[': ']', '{': '}'}   # abridor → fechador
 FECHADORES: dict[str, str] = {v: k for k, v in ABRIDORES.items()}  # fechador → abridor
@@ -93,9 +91,6 @@ def build_balanceado_pda() -> PDA:
     )
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 _MAX_LEN = 10_000
 

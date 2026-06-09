@@ -19,9 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from automato import load_test_cases
 from regular import build_cpf_dfa
 
-# ---------------------------------------------------------------------------
 # Reconhecedor via re (comparacao apenas - NAO e o reconhecedor principal)
-# ---------------------------------------------------------------------------
 
 _PADRAO_RE = re.compile(r'\d{3}\.\d{3}\.\d{3}-\d{2}')
 
@@ -31,9 +29,6 @@ def validar_cpf_re(s: str) -> bool:
     return bool(_PADRAO_RE.fullmatch(s))
 
 
-# ---------------------------------------------------------------------------
-# Tabela comparativa
-# ---------------------------------------------------------------------------
 
 _BASE = Path(__file__).parent.parent
 _TXT  = _BASE / "testes" / "testes_regular.txt"
@@ -49,7 +44,6 @@ def comparar() -> int:
     """
     casos = load_test_cases(_TXT)
 
-    # Cabecalho
     cab_c = "Cadeia".ljust(COL_C)
     print(f"  {cab_c}  {'DFA':<{COL_R}}  {'re':<{COL_R}}  Concordam?")
     print(f"  {'-' * (COL_C + COL_R * 2 + 16)}")

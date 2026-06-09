@@ -11,9 +11,7 @@ import pytest
 from automato import load_test_cases
 from regular import build_cpf_dfa, TRAP, PADRAO
 
-# ---------------------------------------------------------------------------
 # Testes parametrizados via arquivo .txt
-# ---------------------------------------------------------------------------
 
 _BASE = Path(__file__).parent.parent
 _TXT = _BASE / 'testes' / 'testes_regular.txt'
@@ -30,9 +28,6 @@ def test_cpf_txt(cadeia, esperado):
     )
 
 
-# ---------------------------------------------------------------------------
-# Testes estruturais
-# ---------------------------------------------------------------------------
 
 def test_numero_de_estados():
     dfa = build_cpf_dfa()

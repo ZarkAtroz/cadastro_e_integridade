@@ -26,16 +26,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from automato import MT
 
-# ---------------------------------------------------------------------------
-# Alfabetos
-# ---------------------------------------------------------------------------
 
 INPUT_ALPHABET: set[str] = {'0', '1', '#'}
 TAPE_ALPHABET:  set[str] = {'0', '1', '#', 'X', 'Y', '_'}
 
-# ---------------------------------------------------------------------------
 # Tabela de transições (dict-of-dicts, achata para MT.delta)
-# ---------------------------------------------------------------------------
 # Formato interno: {estado: {símbolo_lido: (próximo_estado, escrito, mov)}}
 # Γ = {0, 1, #, X, Y, _}
 
@@ -176,9 +171,6 @@ def build_ww_mt() -> MT:
     )
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 def _formata_fita(fita: list[str], cabeca: int) -> str:
     """Retorna a fita como string com '>' marcando a posição da cabeça."""

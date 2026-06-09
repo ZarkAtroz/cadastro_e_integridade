@@ -21,9 +21,6 @@ from regular import build_cpf_dfa
 from livre_contexto import build_balanceado_pda
 from recursiva import build_ww_mt
 
-# ---------------------------------------------------------------------------
-# Configuração das baterias
-# ---------------------------------------------------------------------------
 
 BASE = Path(__file__).parent.parent
 
@@ -52,9 +49,6 @@ BATERIAS: list[tuple[str, Callable, str, str, str]] = [
     ),
 ]
 
-# ---------------------------------------------------------------------------
-# Validação de entrada
-# ---------------------------------------------------------------------------
 
 MAX_LEN = 10_000
 
@@ -77,9 +71,6 @@ def _valida_cadeia(cadeia: str, origem: str) -> None:
         sys.exit(2)
 
 
-# ---------------------------------------------------------------------------
-# Formatação
-# ---------------------------------------------------------------------------
 
 # Detecta suporte a UTF-8; usa ASCII se terminal não suportar
 _UTF8 = (getattr(sys.stdout, "encoding", "") or "").lower().replace("-", "") == "utf8"
@@ -112,9 +103,6 @@ def _cabecalho_tabela() -> str:
     return f"  {c}  {e}  {o}  {p}  OK?"
 
 
-# ---------------------------------------------------------------------------
-# Execução principal
-# ---------------------------------------------------------------------------
 
 def rodar_bateria(
     rotulo: str,
@@ -153,7 +141,6 @@ def rodar_bateria(
         print(f"  Aprovacao: {ok}/{len(casos)}")
         print()
 
-    # Passo a passo
     if not no_trace:
         for cadeia_trace, label in [(trace_aceita, "ACEITA"), (trace_rejeita, "REJEITA")]:
             _valida_cadeia(cadeia_trace, "trace")

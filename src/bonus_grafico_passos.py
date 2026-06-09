@@ -23,9 +23,6 @@ from regular import build_cpf_dfa
 from livre_contexto import build_balanceado_pda
 from recursiva import build_ww_mt
 
-# ---------------------------------------------------------------------------
-# Coleta de dados
-# ---------------------------------------------------------------------------
 
 def medir_dfa(ns: list[int]) -> list[int]:
     """
@@ -67,9 +64,7 @@ def medir_mt(ns: list[int]) -> list[int]:
     return resultados
 
 
-# ---------------------------------------------------------------------------
 # Impressao de tabela no stdout
-# ---------------------------------------------------------------------------
 
 def imprimir_tabela(modelo: str, ns: list[int], passos: list[int],
                     ajuste: str | None = None) -> None:
@@ -81,9 +76,6 @@ def imprimir_tabela(modelo: str, ns: list[int], passos: list[int],
     print()
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 def main() -> None:
     # Tamanhos de entrada por modelo
@@ -91,7 +83,6 @@ def main() -> None:
     ns_pda = [1, 5, 10, 50, 100, 500]
     ns_mt  = [1, 2, 5, 10, 20, 50]
 
-    # Medicoes
     passos_dfa = medir_dfa(ns_dfa)
     passos_pda = medir_pda(ns_pda)
     passos_mt  = medir_mt(ns_mt)
@@ -101,18 +92,13 @@ def main() -> None:
     a_mt  = coefs[0]
     ajuste_str = f"Ajuste polinomial: passos ~~ a*N^2 com a = {a_mt:.2f}"
 
-    # Impressao no stdout
     imprimir_tabela("DFA", ns_dfa, passos_dfa)
     imprimir_tabela("PDA", ns_pda, passos_pda)
     imprimir_tabela("MT",  ns_mt,  passos_mt, ajuste=ajuste_str)
 
-    # ---------------------------------------------------------------------------
-    # Figura
-    # ---------------------------------------------------------------------------
     fig, axes = plt.subplots(3, 1, figsize=(8, 12))
     fig.suptitle("Crescimento de passos por modelo de automato", fontsize=14)
 
-    # --- DFA ---
     ax = axes[0]
     teorico_dfa = [n for n in ns_dfa]
     ax.plot(ns_dfa, passos_dfa,  'o-',  label="medido",   color="steelblue")
@@ -123,7 +109,6 @@ def main() -> None:
     ax.legend()
     ax.grid(True, alpha=0.3)
 
-    # --- PDA ---
     ax = axes[1]
     tamanhos_pda = [2 * n for n in ns_pda]   # cadeia tem tamanho 2N
     teorico_pda  = [p + 1 for p in tamanhos_pda]  # 2N passos + 1 epsilon
@@ -135,7 +120,6 @@ def main() -> None:
     ax.legend()
     ax.grid(True, alpha=0.3)
 
-    # --- MT ---
     ax = axes[2]
     tamanhos_mt = [2 * n + 1 for n in ns_mt]  # cadeia tem tamanho 2N+1
     teorico_mt  = [a_mt * n**2 for n in ns_mt]
@@ -149,7 +133,6 @@ def main() -> None:
 
     plt.tight_layout()
 
-    # Salva
     destino = Path(__file__).parent.parent / "relatorio" / "grafico_passos.png"
     destino.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(destino, dpi=300)

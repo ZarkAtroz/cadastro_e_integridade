@@ -10,9 +10,7 @@ import pytest
 from automato import load_test_cases
 from livre_contexto import build_balanceado_pda, ABRIDORES, FECHADORES
 
-# ---------------------------------------------------------------------------
 # Parametrizados via arquivo .txt
-# ---------------------------------------------------------------------------
 
 _BASE = Path(__file__).parent.parent
 _TXT = _BASE / 'testes' / 'testes_livre_contexto.txt'
@@ -29,9 +27,6 @@ def test_balanceado_txt(cadeia, esperado):
     )
 
 
-# ---------------------------------------------------------------------------
-# Testes estruturais
-# ---------------------------------------------------------------------------
 
 def test_numero_de_estados():
     pda = build_balanceado_pda()
@@ -59,9 +54,7 @@ def test_transicoes_cruzadas_ausentes():
         )
 
 
-# ---------------------------------------------------------------------------
 # Casos críticos explícitos
-# ---------------------------------------------------------------------------
 
 def test_caso_critico_cruzado():
     """([)] deve ser rejeitada - pareamento cruzado."""

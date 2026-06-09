@@ -18,9 +18,7 @@ from regular import build_cpf_dfa
 from livre_contexto import build_balanceado_pda
 from recursiva import build_ww_mt
 
-# ---------------------------------------------------------------------------
 # Cache dos reconhecedores (st.cache_resource: objetos nao-serializaveis)
-# ---------------------------------------------------------------------------
 
 @st.cache_resource
 def get_cpf_dfa():
@@ -40,9 +38,7 @@ def get_ww_mt():
     return build_ww_mt()
 
 
-# ---------------------------------------------------------------------------
 # Funcao unica de renderizacao de aba
-# ---------------------------------------------------------------------------
 
 def render_aba(
     aba_id: str,
@@ -65,7 +61,6 @@ def render_aba(
 
     st.markdown(descricao)
 
-    # Exemplos clicaveis
     st.markdown("**Exemplos:**")
     col_a, col_r = st.columns(2)
 
@@ -85,7 +80,6 @@ def render_aba(
 
     st.markdown("---")
 
-    # Input da cadeia
     cadeia = st.text_input(
         "Cadeia:",
         placeholder=placeholder,
@@ -107,9 +101,6 @@ def render_aba(
             st.code("\n".join(rec.trace), language="")
 
 
-# ---------------------------------------------------------------------------
-# Layout principal
-# ---------------------------------------------------------------------------
 
 st.set_page_config(
     page_title="Reconhecedores - Linguagens Formais",

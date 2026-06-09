@@ -10,9 +10,7 @@ import pytest
 from automato import load_test_cases
 from recursiva import build_ww_mt, INPUT_ALPHABET, TAPE_ALPHABET
 
-# ---------------------------------------------------------------------------
 # Parametrizados via arquivo .txt
-# ---------------------------------------------------------------------------
 
 _BASE = Path(__file__).parent.parent
 _TXT = _BASE / 'testes' / 'testes_recursiva.txt'
@@ -29,9 +27,6 @@ def test_ww_txt(cadeia, esperado):
     )
 
 
-# ---------------------------------------------------------------------------
-# Testes estruturais
-# ---------------------------------------------------------------------------
 
 def test_numero_de_estados():
     # q_return foi dividido em q_return (direita) + q_return_l (esquerda)
@@ -66,9 +61,7 @@ def test_todas_transicoes_referenciam_estados_existentes():
         )
 
 
-# ---------------------------------------------------------------------------
 # Casos críticos explícitos
-# ---------------------------------------------------------------------------
 
 def test_caso_critico_w_vazio():
     """'#' deve ser aceita (w = ε de cada lado)."""
