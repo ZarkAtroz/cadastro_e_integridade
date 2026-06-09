@@ -35,6 +35,10 @@ Thumbs.db
 .idea/
 *.swp
 
+# Arquivos temporarios de varredura/analise
+_scan*.txt
+*.tmp.txt
+
 # Intermediarios da geracao de PDF (ficheiro typst gerado por pandoc)
 relatorio/*.typ
 
